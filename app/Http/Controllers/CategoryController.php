@@ -17,4 +17,11 @@ class CategoryController extends Controller
     {
         return view('category.create');
     }
+
+    public function store()
+    {
+        $data = request()->validate(['title' => 'string|required']);
+        category::create($data);
+        return redirect()->route('category.index');
+    }
 }
