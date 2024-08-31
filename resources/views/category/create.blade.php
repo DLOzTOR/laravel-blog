@@ -1,0 +1,1 @@
+<form action="{{route('category.store')}}"></form>
