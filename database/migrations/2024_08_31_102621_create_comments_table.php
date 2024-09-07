@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('article_id');
+            $table->foreign('article_id')->references('id')->on('articles');
             $table->text('content');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

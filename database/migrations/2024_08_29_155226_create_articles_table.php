@@ -20,7 +20,9 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->index('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->boolean('is_posted');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
